@@ -25,14 +25,19 @@ console.log("A-C Request 1: (complete) ");
 
 const displayNames = [];
 
-function makeDisplayNames(data){
-  data.forEach(function(item){
-    displayNames.push(`Name: ${item.animal_name}, Scientific: ${item.scientific_name}.`)
-  });
-}
-makeDisplayNames(zooAnimals);
-console.log(displayNames);
+// function makeDisplayNames(data){
+//   data.forEach(function(item){
+//     displayNames.push(`Name: ${item.animal_name}, Scientific: ${item.scientific_name}.`)
+//   });
+// }
+// makeDisplayNames(zooAnimals);
 
+
+zooAnimals.forEach(function(item){
+  displayNames.push(`Name: ${item.animal_name}, Scientific: ${item.scientific_name}.`)
+});
+
+console.log(displayNames);
 
 
 
@@ -52,7 +57,7 @@ console.log("A-C Request 2: (complete)");
 // makeLowCaseNames(zooAnimals); 
 // console.log(lowCaseAnimalNames);
 
-lowCaseAnimalNames = zooAnimals.map(function(item){
+let lowCaseAnimalNames = zooAnimals.map(function(item){
   return item.animal_name.toLowerCase();
 });
 
